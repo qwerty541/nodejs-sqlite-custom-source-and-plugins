@@ -4,9 +4,9 @@
     "description": "Playground used to figure out how to use sqlite with custom source and plugins in NodeJS.",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "init-db": "ts-node -P ./tsconfig.json ./init.ts",
-        "insert-values": "ts-node -P ./tsconfig.json ./insert.ts",
-        "select-values": "ts-node -P ./tsconfig.json ./select.ts"
+        "init-db": "ts-node -P ./tsconfig.json ./src/init.ts",
+        "insert-values": "ts-node -P ./tsconfig.json ./src/insert.ts",
+        "select-values": "ts-node -P ./tsconfig.json ./src/select.ts"
     },
     "author": "Alexandr Garbuzov <qwerty541zxc@gmail.com>",
     "license": "ISC",
