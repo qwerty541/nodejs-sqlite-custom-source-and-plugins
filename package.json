@@ -4,6 +4,7 @@
     "description": "Playground used to figure out how to use sqlite with custom source and plugins in NodeJS.",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write ./src/",
         "init-db": "ts-node -P ./tsconfig.json ./src/init.ts",
         "insert-values": "ts-node -P ./tsconfig.json ./src/insert.ts",
         "select-values": "ts-node -P ./tsconfig.json ./src/select.ts"
@@ -17,6 +18,7 @@
         "@types/better-sqlite3": "^7.6.3",
         "@types/node": "^18.15.10",
         "node-gyp": "^9.3.1",
+        "prettier": "^2.8.7",
         "ts-node": "^10.9.1",
         "typescript": "^5.0.2"
     }

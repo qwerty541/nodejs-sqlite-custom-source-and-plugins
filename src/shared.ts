@@ -17,15 +17,15 @@ export function initDatabase(
 
 export async function loadDatabaseExtensions(
     database: sqlite.Database,
-    pluginsFolderPath: string = SQLITE_PLUGINS_FOLDER_PATH.toString()
+    pluginsFolderPath: string = SQLITE_PLUGINS_FOLDER_PATH.toString(),
 ): Promise<void> {
-    const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+    const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
     const plugins = fs.readdirSync(pluginsFolderPath, BUFFER_ENCODING);
 
     for (const plugin of plugins) {
         const pluginPath = path.join(pluginsFolderPath, plugin);
         const extension = path.extname(pluginPath);
-        
+
         if (extension === ".so") {
             while (!database.open) {
                 console.log("Database is not opened yet, starting delay...");
