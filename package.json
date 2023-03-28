@@ -7,7 +7,8 @@
         "format": "prettier --write ./src/",
         "init-db": "ts-node -P ./tsconfig.json ./src/init.ts",
         "insert-values": "ts-node -P ./tsconfig.json ./src/insert.ts",
-        "select-values": "ts-node -P ./tsconfig.json ./src/select.ts"
+        "select-values": "ts-node -P ./tsconfig.json ./src/select.ts",
+        "clear-values": "ts-node -P ./tsconfig.json ./src/truncate.ts"
     },
     "author": "Alexandr Garbuzov <qwerty541zxc@gmail.com>",
     "license": "ISC",
