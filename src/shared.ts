@@ -22,15 +22,16 @@ export async function loadDatabaseExtensions(
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
     const plugins = fs.readdirSync(pluginsFolderPath, BUFFER_ENCODING);
 
+    while (!database.open) {
+        console.log("Database is not opened yet, starting delay...");
+        await delay(100);
+    }
+
     for (const plugin of plugins) {
         const pluginPath = path.join(pluginsFolderPath, plugin);
         const extension = path.extname(pluginPath);
 
         if (extension === ".so") {
-            while (!database.open) {
-                console.log("Database is not opened yet, starting delay...");
-                await delay(100);
-            }
             database.loadExtension(pluginPath);
             console.log(`Extension ${pluginPath} was successfully loaded.`);
         }
