@@ -5,6 +5,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write ./src/",
+        "build": "node-gyp rebuild --release",
         "init-db": "ts-node -P ./tsconfig.json ./src/init.ts",
         "insert-values": "ts-node -P ./tsconfig.json ./src/insert.ts",
         "select-values": "ts-node -P ./tsconfig.json ./src/select.ts",
