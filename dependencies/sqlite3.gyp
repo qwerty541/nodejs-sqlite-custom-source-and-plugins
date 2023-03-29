@@ -18,12 +18,10 @@
             'inputs': [
               'sqlite3/sqlite3.c',
               'sqlite3/sqlite3.h',
-              'sqlite3/sqlite3ext.h',
             ],
             'outputs': [
               '<(SHARED_INTERMEDIATE_DIR)/sqlite3/sqlite3.c',
               '<(SHARED_INTERMEDIATE_DIR)/sqlite3/sqlite3.h',
-              '<(SHARED_INTERMEDIATE_DIR)/sqlite3/sqlite3ext.h',
             ],
             'action': ['node', 'copy.js', '<(SHARED_INTERMEDIATE_DIR)/sqlite3', ''],
           }],
