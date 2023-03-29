@@ -6,7 +6,6 @@ async function run(): Promise<void> {
 
     const query = database.prepare("select * from books");
 
-    console.log("Selected values:");
     for (const book of query.iterate()) {
         console.log(`(${book.id}, ${book.name}, ${book.author})`);
     }
