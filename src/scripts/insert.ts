@@ -1,13 +1,7 @@
-import { initDatabase } from "./shared";
+import sqlite from "better-sqlite3";
 
-async function run(): Promise<void> {
-    const database = await initDatabase(true);
-
+export function run(database: sqlite.Database): void {
     const query = database.prepare("insert into books (id, name, author) values (uuid(), ?, ?)");
     query.run("Harry Potter and the Philosopher's Stone", "J. K. Rowling");
     query.run("The Lord of the Rings", "J. R. R. Tolkien");
-
-    database.close();
 }
-
-run().catch((e) => console.error(e));

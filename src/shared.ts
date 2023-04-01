@@ -1,11 +1,24 @@
 import sqlite from "better-sqlite3";
 import fs from "fs";
 import path from "path";
+import console from "console";
 
 const BUFFER_ENCODING: BufferEncoding = "utf-8";
 const DATABASE_FILE_PATH: fs.PathLike = "./database.db";
 const SQLITE_PLUGINS_FOLDER_PATH: fs.PathLike = "./plugins";
 const SQLITE_NODE_ADDON_FILE_PATH: fs.PathLike = "./build/Release/better_sqlite3.node";
+
+export enum AvailableScripts {
+    Init = "init",
+    Insert = "insert",
+    Select = "select",
+    Truncate = "truncate",
+    Version = "version",
+}
+
+export function displayWhichScriptCurrentlyRunning(script: AvailableScripts): void {
+    console.log(`Running ${script} script.`);
+}
 
 export async function initDatabase(
     fileMustExist: boolean,
@@ -18,6 +31,7 @@ export async function initDatabase(
         verbose: console.log,
         nativeBinding,
     });
+    console.log("Database was successfully initialized.");
     await loadDatabaseExtensions(database, pluginsFolderPath);
     return database;
 }

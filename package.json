@@ -6,11 +6,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write ./src/",
         "build": "node-gyp rebuild --release",
-        "init-db": "ts-node -P ./tsconfig.json ./src/init.ts",
-        "insert-values": "ts-node -P ./tsconfig.json ./src/insert.ts",
-        "select-values": "ts-node -P ./tsconfig.json ./src/select.ts",
-        "clear-values": "ts-node -P ./tsconfig.json ./src/truncate.ts",
-        "check-version": "ts-node -P ./tsconfig.json ./src/version.ts"
+        "execute": "ts-node -P ./tsconfig.json ./src/runner.ts"
     },
     "author": "Alexandr Garbuzov <qwerty541zxc@gmail.com>",
     "license": "ISC",
