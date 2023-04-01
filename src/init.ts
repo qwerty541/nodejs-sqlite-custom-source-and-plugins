@@ -1,8 +1,7 @@
-import { initDatabase, loadDatabaseExtensions } from "./shared";
+import { initDatabase } from "./shared";
 
 async function run(): Promise<void> {
-    const database = initDatabase(false);
-    await loadDatabaseExtensions(database);
+    const database = await initDatabase(false);
 
     const query = database.prepare(
         "create table if not exists books (id uuid, name varchar(100), author varchar(100))",

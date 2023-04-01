@@ -1,8 +1,7 @@
-import { initDatabase, loadDatabaseExtensions } from "./shared";
+import { initDatabase } from "./shared";
 
 async function run(): Promise<void> {
-    const database = initDatabase(true);
-    await loadDatabaseExtensions(database);
+    const database = await initDatabase(true);
 
     const query = database.prepare("insert into books (id, name, author) values (uuid(), ?, ?)");
     query.run("Harry Potter and the Philosopher's Stone", "J. K. Rowling");
