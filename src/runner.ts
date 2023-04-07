@@ -16,7 +16,12 @@ declare global {
 
 async function run(): Promise<void> {
     if (!process.env.SCRIPT) {
-        throw new Error("Script name should be provided.");
+        throw new Error(
+            "Script name should be provided using environment variable. Example: `$ SCRIPT=init yarn execute`. " +
+                `List of currently available scripts: ${Object.values(AvailableScripts).join(
+                    ", ",
+                )}.`,
+        );
     }
 
     const database = await initDatabase(!(process.env.SCRIPT === AvailableScripts.Init));
