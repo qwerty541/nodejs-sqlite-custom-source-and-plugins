@@ -9,7 +9,7 @@
         "execute": "ts-node -P ./tsconfig.json ./src/runner.ts"
     },
     "author": "Alexandr Garbuzov <qwerty541zxc@gmail.com>",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "better-sqlite3": "^8.2.0"
     },
